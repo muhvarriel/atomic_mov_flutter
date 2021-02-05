@@ -10,6 +10,9 @@ class LangMovie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text((movie != null) ? movie.lang : "Tidak ada data",
-        style: TextStyle(color: Colors.grey, fontSize: this.size));
+        style: Theme.of(context)
+            .textTheme
+            .bodyText1
+            .copyWith(fontSize: this.size));
   }
 }

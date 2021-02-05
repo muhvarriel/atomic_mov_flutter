@@ -13,7 +13,10 @@ class DecsMovie extends StatelessWidget {
       margin: EdgeInsets.all(30),
       child: Text((movie != null) ? movie.overview : "Tidak ada data",
           textAlign: TextAlign.justify,
-          style: TextStyle(color: Colors.grey, fontSize: this.size)),
+          style: Theme.of(context)
+              .textTheme
+              .bodyText1
+              .copyWith(fontSize: this.size)),
     );
   }
 }

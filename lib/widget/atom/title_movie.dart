@@ -9,13 +9,11 @@ class TitleMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      (movie != null) ? movie.title : "Tidak ada data",
-      overflow: TextOverflow.ellipsis,
-      style: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
-          fontSize: this.size),
-    );
+    return Text((movie != null) ? movie.title : "Tidak ada data",
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context)
+            .textTheme
+            .bodyText1
+            .copyWith(fontSize: this.size, fontWeight: FontWeight.w500));
   }
 }

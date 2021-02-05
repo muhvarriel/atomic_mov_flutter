@@ -1,3 +1,4 @@
+import 'package:atomic_mov_flutter/pages/setting_page.dart';
 import 'package:atomic_mov_flutter/widget/atom/atom.dart';
 import 'package:atomic_mov_flutter/widget/organism/organism.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +13,11 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purple,
-          title: Text("Menu"),
+          title: Text('Home'),
         ),
         body: Container(
           child: new ListMovie(),
         ),
-        floatingActionButton: AboutButton());
+        floatingActionButton: SettingsButton());
   }
 }

@@ -11,8 +11,16 @@ class CardMovie extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
       decoration: BoxDecoration(
-          borderRadius: new BorderRadius.all(Radius.circular(5)),
-          color: Colors.blueGrey[50]),
+        borderRadius: new BorderRadius.all(Radius.circular(5)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.3),
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: Offset(0, 0),
+          ),
+        ],
+      ),
       child: new Row(
         children: [
           new ImageMovie(
