@@ -12,7 +12,7 @@ class DateMovie extends StatelessWidget {
     return Text((movie != null) ? movie.date : "Tidak ada data",
         style: Theme.of(context)
             .textTheme
-            .bodyText1
-            .copyWith(fontSize: this.size));
+            .subtitle1
+            .copyWith(fontSize: this.size, color: Color(0xFF66667C)));
   }
 }

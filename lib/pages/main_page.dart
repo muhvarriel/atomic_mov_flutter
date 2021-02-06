@@ -11,12 +11,44 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Home'),
+        body: ListView(
+          children: [
+            Container(
+              margin: EdgeInsets.fromLTRB(24, 24, 24, 5),
+              child: Text(
+                "Movies",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(24, 0, 24, 12),
+              child: Text(
+                "Watch much easier",
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle1
+                    .copyWith(fontSize: 15, color: Color(0xFF66667C)),
+              ),
+            ),
+            SizedBox(
+              height: 250,
+              child: new ListMovieBig(),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(24, 0, 24, 5),
+              child: Text(
+                "Latest Movies",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 290,
+              child: new ListMovie(),
+            ),
+          ],
         ),
-        body: Container(
-          child: new ListMovie(),
-        ),
-        floatingActionButton: SettingsButton());
+        floatingActionButton: FloatingBtn(
+          icon: Icons.settings,
+        ));
   }
 }

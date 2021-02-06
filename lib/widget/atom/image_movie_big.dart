@@ -1,10 +1,10 @@
 part of 'atom.dart';
 
-class ImageMovie extends StatelessWidget {
+class ImageMovieBig extends StatelessWidget {
   final width;
   final height;
 
-  const ImageMovie(this.movie, {Key key, this.width, this.height})
+  const ImageMovieBig(this.movie, {Key key, this.width, this.height})
       : super(key: key);
 
   @required
@@ -19,7 +19,7 @@ class ImageMovie extends StatelessWidget {
         borderRadius: new BorderRadius.all(Radius.circular(15)),
         child: new Image.network(
           (movie != null)
-              ? "https://image.tmdb.org/t/p/w500/" + movie.poster
+              ? "https://image.tmdb.org/t/p/w500/" + movie.backdropPath
               : "https://pro-vape.eu/wp-content/uploads/woocommerce-placeholder-600x600.png",
           fit: BoxFit.fitWidth,
         ),

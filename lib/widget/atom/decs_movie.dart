@@ -10,7 +10,7 @@ class DecsMovie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(30),
+      margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
       child: Text((movie != null) ? movie.overview : "Tidak ada data",
           textAlign: TextAlign.justify,
           style: Theme.of(context)

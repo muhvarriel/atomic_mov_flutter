@@ -1,6 +1,10 @@
 part of 'atom.dart';
 
-class SettingsButton extends StatelessWidget {
+class FloatingBtn extends StatelessWidget {
+  final icon;
+
+  FloatingBtn({Key key, this.icon}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -9,7 +13,10 @@ class SettingsButton extends StatelessWidget {
           builder: (context) => SettingPage(),
         ));
       },
-      child: Icon(Icons.settings),
+      child: Icon(
+        this.icon,
+        color: Colors.white,
+      ),
       backgroundColor: secondaryColor,
     );
   }

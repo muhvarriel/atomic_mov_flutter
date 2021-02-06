@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 const Color primaryColor = Color(0xFF28336f);
-const Color secondaryColor = Color(0xFF4cd5ce);
+const Color secondaryColor = Color(0xFF246BFD);
+const Color starColor = Color(0xFFFBD460);
 
 final ThemeData lightTheme = _buildLightTheme();
 final ThemeData darkTheme = _buildDarkTheme();
@@ -52,7 +53,7 @@ ThemeData _buildDarkTheme() {
     toggleableActiveColor: secondaryColor,
     accentColor: secondaryColor,
     canvasColor: const Color(0xFF2A4058),
-    scaffoldBackgroundColor: const Color(0xFF1b214d),
+    scaffoldBackgroundColor: const Color(0xFF19182C),
     backgroundColor: const Color(0xFF1b214d),
     errorColor: const Color(0xFFB00020),
     buttonTheme: ButtonThemeData(

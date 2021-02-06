@@ -1,11 +1,11 @@
 part of 'organism.dart';
 
-class ListMovie extends StatefulWidget {
+class ListMovieBig extends StatefulWidget {
   @override
-  _ListMovieState createState() => _ListMovieState();
+  _ListMovieBigState createState() => _ListMovieBigState();
 }
 
-class _ListMovieState extends State<ListMovie> {
+class _ListMovieBigState extends State<ListMovieBig> {
   movieDetail(BuildContext context, Movie movie) {
     Navigator.push(
       context,
@@ -21,13 +21,13 @@ class _ListMovieState extends State<ListMovie> {
     return BlocBuilder<MovieBloc, MovieState>(
       builder: (_, movieState) {
         if (movieState is MovieLoaded) {
-          List<Movie> movies = movieState.movies.sublist(10);
+          List<Movie> movies = movieState.movies.sublist(0, 10);
 
           return ListView.builder(
-              scrollDirection: Axis.vertical,
+              scrollDirection: Axis.horizontal,
               itemCount: movies.length,
               itemBuilder: (_, index) => Container(
-                    child: new CardMovie(
+                    child: new CardMovieBig(
                       movies[index],
                       onTap: () {
                         movieDetail(context, movies[index]);

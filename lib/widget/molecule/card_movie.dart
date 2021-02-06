@@ -16,46 +16,43 @@ class CardMovie extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
-        decoration: BoxDecoration(
-          borderRadius: new BorderRadius.all(Radius.circular(5)),
-        ),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: new Row(
-              children: [
-                new ImageMovie(
-                  movie,
-                  width: 70.0,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: new Row(
+            children: [
+              new ImageMovie(
+                movie,
+                width: 100.0,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: 220,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    new TitleMovie(
+                      movie,
+                      size: 20.0,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    new DateMovie(
+                      movie,
+                      size: 15.0,
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    new RatingStars(
+                      voteAverage: movie.voteAverage,
+                    )
+                  ],
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  width: 250,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      new TitleMovie(
-                        movie,
-                        size: 20.0,
-                      ),
-                      new DateMovie(
-                        movie,
-                        size: 15.0,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      new LangMovie(
-                        movie,
-                        size: 15.0,
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),

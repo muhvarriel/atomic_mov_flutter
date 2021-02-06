@@ -29,7 +29,9 @@ dependencies:
   flutter_spinkit: ^4.1.2+1
   http: ^0.12.2
   hydrated_bloc: ^6.1.0
+  material_design_icons_flutter: ^4.0.5855
   shared_preferences: ^0.5.8
+  youtube_player_flutter: ^7.0.0+7
 
 dev_dependencies:
   flutter_test:
