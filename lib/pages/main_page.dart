@@ -1,4 +1,3 @@
-import 'package:atomic_mov_flutter/pages/setting_page.dart';
 import 'package:atomic_mov_flutter/widget/atom/atom.dart';
 import 'package:atomic_mov_flutter/widget/organism/organism.dart';
 import 'package:flutter/material.dart';

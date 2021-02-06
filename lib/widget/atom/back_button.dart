@@ -10,8 +10,8 @@ class BackButtonCustom extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           child:
-              Text("Back", style: TextStyle(color: Colors.white, fontSize: 20)),
-          color: Colors.purple,
+              Text("Back", style: TextStyle(color: Colors.black, fontSize: 20)),
+          color: secondaryColor,
           onPressed: () {
             Navigator.pop(context);
           }),
