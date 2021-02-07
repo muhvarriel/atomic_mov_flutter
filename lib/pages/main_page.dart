@@ -1,3 +1,4 @@
+import 'package:atomic_mov_flutter/pages/setting_page.dart';
 import 'package:atomic_mov_flutter/widget/atom/atom.dart';
 import 'package:atomic_mov_flutter/widget/organism/organism.dart';
 import 'package:flutter/material.dart';
@@ -41,14 +42,21 @@ class _MainPageState extends State<MainPage> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(
-              height: 290,
-              child: new ListMovie(),
+            Container(height: 1850, child: new ListMovie()),
+            Center(
+              child: Text(
+                "You’re All Caught Up",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+              ),
             ),
+            SizedBox(
+              height: 100,
+            )
           ],
         ),
         floatingActionButton: FloatingBtn(
           icon: Icons.settings,
+          page: SettingPage(),
         ));
   }
 }

@@ -20,7 +20,7 @@ class RatingStars extends StatelessWidget {
         5,
         (index) => Icon(
               index < n ? MdiIcons.star : MdiIcons.starOutline,
-              color: starColor,
+              color: Color(0xFFFFAB2E),
               size: starSize,
             ));
 

@@ -23,17 +23,18 @@ class _ListMovieState extends State<ListMovie> {
         if (movieState is MovieLoaded) {
           List<Movie> movies = movieState.movies.sublist(10);
 
-          return ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: movies.length,
-              itemBuilder: (_, index) => Container(
-                    child: new CardMovie(
+          return Container(
+            height: double.maxFinite,
+            child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: movies.length,
+                itemBuilder: (_, index) => new CardMovie(
                       movies[index],
                       onTap: () {
                         movieDetail(context, movies[index]);
                       },
-                    ),
-                  ));
+                    )),
+          );
         } else {
           return SpinKitFadingCircle(
             color: primaryColor,
