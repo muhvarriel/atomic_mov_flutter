@@ -16,7 +16,7 @@ class ImageMovieBig extends StatelessWidget {
       width: this.width,
       height: this.height,
       child: ClipRRect(
-        borderRadius: new BorderRadius.all(Radius.circular(15)),
+        borderRadius: new BorderRadius.all(Radius.circular(25)),
         child: new Image.network(
           (movie != null)
               ? "https://image.tmdb.org/t/p/w500/" + movie.backdropPath

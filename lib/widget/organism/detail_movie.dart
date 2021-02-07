@@ -7,8 +7,8 @@ class DetailMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MovieDetail movieDetail;
     List<MovieVideo> movieVideo;
+    List<Credit> credits;
 
     return Scaffold(
       body: ListView(
@@ -24,7 +24,7 @@ class DetailMovie extends StatelessWidget {
                           if (snapshot.hasData) {
                             movieVideo = snapshot.data;
                             return SizedBox(
-                              height: 200,
+                              height: 230,
                               child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   itemCount: movieVideo.length,
@@ -63,45 +63,12 @@ class DetailMovie extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Row(
-                          children: [
-                            new ImageMovie(
-                              movie,
-                              width: 70.0,
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Container(
-                              width: 250,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  new TitleMovie(
-                                    movie,
-                                    size: 20.0,
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  new DateMovie(
-                                    movie,
-                                    size: 15.0,
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  new RatingStars(
-                                    voteAverage: movie.voteAverage,
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                      child: new CardMovie(
+                        movie,
+                        onTap: () {},
+                        imageSize: 70.0,
+                        titleSize: 20.0,
+                        dateSize: 15.0,
                       ),
                     ),
                     SizedBox(
@@ -109,6 +76,40 @@ class DetailMovie extends StatelessWidget {
                       movie,
                       size: 15.0,
                     )),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(24, 24, 24, 12),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Credits",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                    FutureBuilder(
+                        future: GetMovie.getCredits(movie.id),
+                        builder: (_, snapshot) {
+                          if (snapshot.hasData) {
+                            credits = snapshot.data;
+                            return SizedBox(
+                              height: 150,
+                              child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: credits.length,
+                                  itemBuilder: (_, index) => Container(
+                                      margin: EdgeInsets.fromLTRB(24, 0, 5, 12),
+                                      child: CreditCard(credits[index]))),
+                            );
+                          } else {
+                            return SizedBox(
+                                height: 50,
+                                child: SpinKitFadingCircle(
+                                  color: primaryColor,
+                                ));
+                          }
+                        }),
                   ],
                 );
               }),

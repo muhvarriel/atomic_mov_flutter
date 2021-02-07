@@ -3,8 +3,11 @@ part of 'molecule.dart';
 class CardMovie extends StatelessWidget {
   final Movie movie;
   final Function onTap;
+  final imageSize, titleSize, dateSize;
 
-  CardMovie(this.movie, {this.onTap});
+  const CardMovie(this.movie,
+      {Key key, this.onTap, this.imageSize, this.titleSize, this.dateSize})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class CardMovie extends StatelessWidget {
             children: [
               new ImageMovie(
                 movie,
-                width: 100.0,
+                width: this.imageSize,
               ),
               SizedBox(
                 width: 20,
@@ -34,14 +37,14 @@ class CardMovie extends StatelessWidget {
                   children: [
                     new TitleMovie(
                       movie,
-                      size: 20.0,
+                      size: this.titleSize,
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     new DateMovie(
                       movie,
-                      size: 15.0,
+                      size: this.dateSize,
                     ),
                     SizedBox(
                       height: 30,

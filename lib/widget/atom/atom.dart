@@ -14,6 +14,7 @@ part 'image_movie.dart';
 part 'image_movie_big.dart';
 part 'video_movie.dart';
 part 'title_movie.dart';
+part 'credit_movie.dart';
 part 'copyright_app.dart';
 part 'toggle_switch.dart';
 part 'rating_stars.dart';

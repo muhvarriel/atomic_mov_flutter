@@ -56,4 +56,22 @@ class GetMovie {
         .map((e) => MovieVideo(key: (e as Map<String, dynamic>)['key']))
         .toList();
   }
+
+  static Future<List<Credit>> getCredits(int movieID,
+      {http.Client client}) async {
+    String url =
+        "https://api.themoviedb.org/3/movie/$movieID/credits?api_key=d6bf8d0722c9b8c4a475e90bba07ce48";
+
+    client ??= http.Client();
+
+    var response = await client.get(url);
+    var data = json.decode(response.body);
+
+    return ((data as Map<String, dynamic>)['cast'] as List)
+        .map((e) => Credit(
+            name: (e as Map<String, dynamic>)['name'],
+            profilePath: (e as Map<String, dynamic>)['profile_path']))
+        .take(8)
+        .toList();
+  }
 }

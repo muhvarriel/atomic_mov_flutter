@@ -32,13 +32,13 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             SizedBox(
-              height: 250,
+              height: 280,
               child: new ListMovieBig(),
             ),
             Container(
               margin: EdgeInsets.fromLTRB(24, 0, 24, 5),
               child: Text(
-                "Latest Movies",
+                "Popular Movies",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),

@@ -33,6 +33,9 @@ class _ListMovieState extends State<ListMovie> {
                       onTap: () {
                         movieDetail(context, movies[index]);
                       },
+                      imageSize: 100.0,
+                      titleSize: 20.0,
+                      dateSize: 15.0,
                     )),
           );
         } else {
