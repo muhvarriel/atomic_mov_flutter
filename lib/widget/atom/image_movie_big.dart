@@ -2,10 +2,8 @@ part of 'atom.dart';
 
 class ImageMovieBig extends StatelessWidget {
   final width;
-  final height;
 
-  const ImageMovieBig(this.movie, {Key key, this.width, this.height})
-      : super(key: key);
+  const ImageMovieBig(this.movie, {Key key, this.width}) : super(key: key);
 
   @required
   final Movie movie;
@@ -14,7 +12,6 @@ class ImageMovieBig extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: this.width,
-      height: this.height,
       child: ClipRRect(
         borderRadius: new BorderRadius.all(Radius.circular(25)),
         child: new Image.network(

@@ -23,7 +23,6 @@ class CardMovieBig extends StatelessWidget {
               new ImageMovieBig(
                 movie,
                 width: 320.0,
-                height: 180.0,
               ),
               SizedBox(
                 height: 10,
