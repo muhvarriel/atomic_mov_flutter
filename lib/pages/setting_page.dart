@@ -1,7 +1,4 @@
-import 'package:atomic_mov_flutter/widget/atom/atom.dart';
-import 'package:flutter/material.dart';
-
-import '../widget/atom/atom.dart';
+part of 'pages.dart';
 
 class SettingPage extends StatelessWidget {
   @override
