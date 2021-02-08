@@ -17,27 +17,34 @@ class DetailMovie extends StatelessWidget {
               future: GetMovie.getDetails(movie),
               builder: (_, snapshot) {
                 return Column(
-                  children: <Widget>[
-                    FutureBuilder(
-                        future: GetMovie.getVideos(movie.id),
-                        builder: (_, snapshot) {
-                          if (snapshot.hasData) {
-                            movieVideo = snapshot.data;
-                            return SizedBox(
-                              height: 230,
-                              child: ListView.builder(
-                                  itemCount: movieVideo.length,
-                                  itemBuilder: (_, index) => Container(
-                                      child: VideoMovie(movieVideo[index]))),
-                            );
-                          } else {
-                            return SizedBox(
-                                height: 50,
-                                child: SpinKitFadingCircle(
-                                  color: primaryColor,
-                                ));
-                          }
-                        }),
+                  children: [
+                    Container(
+                      child: kIsWeb
+                          ? SizedBox(
+                              height: 5,
+                            )
+                          : FutureBuilder(
+                              future: GetMovie.getVideos(movie.id),
+                              builder: (_, snapshot) {
+                                if (snapshot.hasData) {
+                                  movieVideo = snapshot.data;
+                                  return SizedBox(
+                                    height: 230,
+                                    child: ListView.builder(
+                                        itemCount: movieVideo.length,
+                                        itemBuilder: (_, index) => Container(
+                                            child:
+                                                VideoMovie(movieVideo[index]))),
+                                  );
+                                } else {
+                                  return SizedBox(
+                                      height: 50,
+                                      child: SpinKitFadingCircle(
+                                        color: primaryColor,
+                                      ));
+                                }
+                              }),
+                    ),
                     SizedBox(
                       height: 24,
                     ),
