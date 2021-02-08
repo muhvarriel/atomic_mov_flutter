@@ -26,7 +26,6 @@ class DetailMovie extends StatelessWidget {
                             return SizedBox(
                               height: 230,
                               child: ListView.builder(
-                                  scrollDirection: Axis.horizontal,
                                   itemCount: movieVideo.length,
                                   itemBuilder: (_, index) => Container(
                                       child: VideoMovie(movieVideo[index]))),

@@ -1,6 +1,5 @@
 import 'package:atomic_mov_flutter/bloc/bloc.dart';
 import 'package:atomic_mov_flutter/models/models.dart';
-import 'package:atomic_mov_flutter/pages/setting_page.dart';
 import 'package:atomic_mov_flutter/widget/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
