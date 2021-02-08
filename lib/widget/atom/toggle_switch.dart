@@ -14,13 +14,16 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeBloc, ThemeChangeState>(
       builder: (context, state) {
-        return SwitchListTile(
-            title: Text(widget.name),
-            value: state.themeState.isLightMode,
-            onChanged: (value) {
-              BlocProvider.of<ThemeBloc>(context)
-                  .add(OnThemeChangedEvent(value));
-            });
+        return Container(
+          margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+          child: SwitchListTile(
+              title: Text(widget.name),
+              value: state.themeState.isLightMode,
+              onChanged: (value) {
+                BlocProvider.of<ThemeBloc>(context)
+                    .add(OnThemeChangedEvent(value));
+              }),
+        );
       },
     );
   }

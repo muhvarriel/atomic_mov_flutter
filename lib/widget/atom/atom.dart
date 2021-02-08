@@ -18,3 +18,4 @@ part 'credit_movie.dart';
 part 'copyright_app.dart';
 part 'toggle_switch.dart';
 part 'rating_stars.dart';
+part 'back_title.dart';

@@ -42,25 +42,8 @@ class DetailMovie extends StatelessWidget {
                     SizedBox(
                       height: 24,
                     ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(24, 0, 24, 12),
-                      child: Row(
-                        children: [
-                          new GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Icon(Icons.arrow_back)),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            "Detail Movie",
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                    new BackTitle(
+                      title: "Detail Movie",
                     ),
                     Container(
                       child: new CardMovie(
