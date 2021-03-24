@@ -18,6 +18,8 @@ class _ListMovieBigState extends State<ListMovieBig> {
 
   @override
   Widget build(BuildContext context) {
+    //return LoadCardBig();
+
     return BlocBuilder<MovieBloc, MovieState>(
       builder: (_, movieState) {
         if (movieState is MovieLoaded) {
@@ -35,10 +37,13 @@ class _ListMovieBigState extends State<ListMovieBig> {
                     ),
                   ));
         } else {
+          return LoadCardBig();
+          /*
           return SpinKitFadingCircle(
             color: primaryColor,
             size: 50,
           );
+          */
         }
       },
     );

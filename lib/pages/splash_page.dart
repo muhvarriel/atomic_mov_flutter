@@ -20,9 +20,10 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          "Movies",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        child: Container(
+          height: 136,
+          decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/logo.png"))),
         ),
       ),
     );

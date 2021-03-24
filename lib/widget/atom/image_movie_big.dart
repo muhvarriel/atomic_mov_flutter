@@ -12,12 +12,13 @@ class ImageMovieBig extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: this.width,
+      height: 170,
       child: ClipRRect(
         borderRadius: new BorderRadius.all(Radius.circular(25)),
         child: new Image.network(
           (movie != null)
               ? "https://image.tmdb.org/t/p/w500/" + movie.backdropPath
-              : "https://pro-vape.eu/wp-content/uploads/woocommerce-placeholder-600x600.png",
+              : AssetImage("assets/empty.png"),
           fit: BoxFit.fitWidth,
         ),
       ),

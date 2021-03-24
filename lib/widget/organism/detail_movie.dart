@@ -18,6 +18,7 @@ class DetailMovie extends StatelessWidget {
               builder: (_, snapshot) {
                 return Column(
                   children: [
+                    /*
                     Container(
                       child: kIsWeb
                           ? SizedBox(
@@ -45,6 +46,7 @@ class DetailMovie extends StatelessWidget {
                                 }
                               }),
                     ),
+                    */
                     SizedBox(
                       height: 24,
                     ),
@@ -55,7 +57,7 @@ class DetailMovie extends StatelessWidget {
                       child: new CardMovie(
                         movie,
                         onTap: () {},
-                        imageSize: 70.0,
+                        imageSize: 100.0,
                         titleSize: 20.0,
                         dateSize: 15.0,
                       ),

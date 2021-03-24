@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const Color primaryColor = Color(0xFF28336f);
 const Color secondaryColor = Color(0xFF246BFD);
 const Color starColor = Color(0xFFFBD460);
+const Color bgColor = Color(0xFF19182C);
 
 final ThemeData lightTheme = _buildLightTheme();
 final ThemeData darkTheme = _buildDarkTheme();
